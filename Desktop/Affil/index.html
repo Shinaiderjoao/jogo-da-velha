@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ProDentim — Brand New Probiotics For Healthy Teeth &amp; Gums</title>
+<meta name="description" content="ProDentim: a unique blend of 3.5 billion probiotic strains and nutrients backed by clinical research, specially designed for the health of your teeth and gums.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#0c7a4d;        /* header green */
+    --green-d:#0a6b43;
+    --hero1:#a6c2ad;        /* sage hero gradient */
+    --hero2:#84ab8d;
+    --red:#e0564e;
+    --red-d:#cf463e;
+    --ink:#1f2a30;
+    --ink-soft:#52636b;
+    --label-green:#2f8a5f;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);line-height:1.6;
+    -webkit-font-smoothing:antialiased;background:#fff}
+  h1,h2,h3,.disp{font-family:'Quicksand',sans-serif}
+  svg{display:block}
+  a{text-decoration:none;color:inherit}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 28px}
+
+  /* top clickbank bar */
+  .cbbar{background:#fff;text-align:center;padding:7px 10px;font-size:13px;color:#7a7a7a;
+    border-bottom:1px solid #eee;letter-spacing:.3px}
+  .cbbar b{color:#111;font-weight:800;letter-spacing:.5px}
+  .cbbar .sep{margin:0 8px;color:#ccc}
+
+  /* nav */
+  .nav{background:var(--green)}
+  .nav .in{max-width:1180px;margin:0 auto;padding:0 28px;height:86px;display:flex;
+    align-items:center;justify-content:space-between}
+  .logo{font-family:'Quicksand';font-weight:700;font-size:30px;color:#fff;letter-spacing:.5px}
+  .nav-r{display:flex;align-items:center;gap:34px}
+  .nav-r a{color:#eafff4;font-size:16px;font-weight:500}
+  .nav-r a:hover{color:#fff}
+  .order{background:var(--red);color:#fff !important;font-weight:600;padding:12px 24px;
+    border-radius:7px;box-shadow:0 4px 12px rgba(224,86,78,.35)}
+  .order:hover{background:var(--red-d)}
+
+  /* hero */
+  .hero{background:linear-gradient(120deg,var(--hero1),var(--hero2))}
+  .hero .in{max-width:1180px;margin:0 auto;padding:30px 28px 56px;
+    display:grid;grid-template-columns:5fr 7fr;gap:30px;align-items:center}
+  .visual{position:relative;display:grid;place-items:center;padding-right:0}
+  .bottle-img{width:100%;max-width:520px;height:auto;
+    filter:drop-shadow(0 22px 26px rgba(0,0,0,.18))}
+
+  .copy h1{color:#fff;font-weight:700;font-size:40px;line-height:1.15;margin-bottom:18px;
+    text-shadow:0 1px 2px rgba(0,0,0,.12)}
+  .copy p.lead{color:#f3faf5;font-size:20px;line-height:1.5;max-width:560px;margin-bottom:30px}
+  .copy p.lead b{color:#fff;font-weight:700}
+
+  .seals-img{max-width:560px;width:100%;height:auto}
+
+  /* discovery */
+  .disc{background:#fff;padding:64px 0}
+  .disc .in{max-width:1100px;margin:0 auto;padding:0 28px;display:grid;
+    grid-template-columns:330px 1fr;gap:46px;align-items:start}
+  .docimg{border:3px solid #111;border-radius:14px;overflow:hidden;background:#eef1f0;line-height:0}
+  .docimg img{width:100%;height:auto;display:block}
+  .disc .red{color:var(--red);font-family:'Quicksand';font-weight:700;font-size:22px;margin-bottom:14px}
+  .disc h2{font-family:'Quicksand';font-weight:700;font-size:32px;line-height:1.25;color:#15202a;margin-bottom:14px}
+  .disc .hint{color:var(--red);font-family:'Quicksand';font-weight:700;font-size:21px;margin-bottom:18px}
+  .disc .body{color:#2c5a52;font-size:18px;line-height:1.6}
+  .disc .body u{text-decoration-color:#9cc;}
+
+  @media(max-width:900px){
+    .nav-r a:not(.order){display:none}
+    .hero .in{grid-template-columns:1fr;text-align:center}
+    .visual{order:-1}
+    .copy p.lead{margin-left:auto;margin-right:auto}
+    .seals{justify-content:center}
+    .disc .in{grid-template-columns:1fr}
+    .docimg{max-width:330px;margin:0 auto}
+  }
+
+  /* ===== cookie modal ===== */
+  .overlay{position:fixed;inset:0;z-index:100;display:flex;align-items:center;justify-content:center;
+    padding:20px;background:rgba(10,40,28,.45);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
+    animation:fade .25s ease}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .modal{width:100%;max-width:440px;background:#fff;border-radius:20px;padding:34px 32px;text-align:center;
+    box-shadow:0 30px 80px rgba(0,0,0,.4);animation:pop .3s cubic-bezier(.2,.9,.3,1.2)}
+  @keyframes pop{from{transform:translateY(14px) scale(.96);opacity:0}to{transform:none;opacity:1}}
+  .modal .ci{width:60px;height:60px;border-radius:16px;margin:0 auto 16px;background:#e9f6ee;
+    display:grid;place-items:center;color:var(--green)}
+  .modal .ci svg{width:32px;height:32px;stroke-width:1.8;fill:none;stroke:currentColor}
+  .modal h3{font-family:'Quicksand';font-size:23px;font-weight:700;margin-bottom:10px}
+  .modal p{font-size:15px;color:var(--ink-soft);margin-bottom:24px}
+  .modal p a{color:var(--green);font-weight:600;text-decoration:underline}
+  .acts{display:flex;flex-direction:column;gap:10px}
+  .mbtn{font-family:'Quicksand';font-weight:700;font-size:16px;padding:15px;border-radius:10px;
+    border:none;cursor:pointer;transition:transform .15s,filter .15s}
+  .mbtn:hover{transform:translateY(-2px);filter:brightness(1.05)}
+  .mbtn.primary{background:var(--green);color:#fff}
+  .mbtn.ghost{background:#fff;color:var(--ink);box-shadow:inset 0 0 0 1.5px #e3e8e6}
+</style>
+</head>
+<body>
+
+<!-- ========= reusable SVG (cookie icon) ========= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-cookie" viewBox="0 0 24 24"><path d="M12 3a9 9 0 1 0 9 9 3 3 0 0 1-3-3 3 3 0 0 1-3-3 3 3 0 0 1-3-3z"/><circle cx="9" cy="11" r="1" fill="currentColor" stroke="none"/><circle cx="14" cy="14" r="1" fill="currentColor" stroke="none"/><circle cx="15" cy="9" r=".9" fill="currentColor" stroke="none"/></symbol>
+  </defs>
+</svg>
+
+<!-- ========= top clickbank bar ========= -->
+<div class="cbbar"><b>CLICKBANK®</b><span class="sep">|</span>Confiável <span style="font-size:11px">🔒</span> SEGURO</div>
+
+<!-- ========= nav ========= -->
+<nav class="nav">
+  <div class="in">
+    <span class="logo">ProDentim</span>
+    <div class="nav-r">
+      <a href="#" data-go>About ProDentim</a>
+      <a href="#" data-go>Ingredients</a>
+      <a href="#" data-go>FAQ</a>
+      <a href="#" class="order" data-go>Order Now</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========= hero ========= -->
+<header class="hero">
+  <div class="in">
+    <div class="visual">
+      <img class="bottle-img" src="images/introducting_prodentim.png" alt="ProDentim — Advanced Oral Probiotics">
+    </div>
+
+    <div class="copy">
+      <h1>Brand New Probiotics<br>Specially Designed For The<br>Health Of Your Teeth And Gums</h1>
+      <p class="lead">Try <b>ProDentim:</b> a unique blend of <b>3.5 billion</b> probiotic strains and nutrients backed by clinical research.</p>
+      <img class="seals-img" src="images/certifications.png" alt="GMP Certified · FDA Registered Facility · 100% Natural Ingredients · Made in USA · GMO Free">
+
+    </div>
+  </div>
+</header>
+
+<!-- ========= discovery ========= -->
+<section class="disc">
+  <div class="in">
+    <div class="docimg"><img src="images/doctor.png" alt="Dentist holding a dental model"></div>
+    <div>
+      <div class="red">May 2022 - New Scientific Discovery</div>
+      <h2>A recent study put out in the Springer Nature publication found that people who have good teeth have a high population of good bacteria in the mouth.</h2>
+      <div class="hint">(Hint - No Toothpaste or Mouthwash Involved)</div>
+      <p class="body">As it turns out, many common dental products (such as <u>toothpaste and mouthwash</u>) contain toxic ingredients that can destroy the microbiome in the mouth. This explains why teeth can thrive for hundreds of years outside the mouth (in fossils), while in our mouth they get ruined by something so simple as chocolate.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========= cookie modal (always on load) ========= -->
+<div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-labelledby="ctitle">
+  <div class="modal" id="modal">
+    <div class="ci"><svg viewBox="0 0 24 24"><use href="#i-cookie"/></svg></div>
+    <h3 id="ctitle">We value your privacy</h3>
+    <p>We use cookies to enhance your browsing experience and analyze our traffic. By continuing, you consent to our use of cookies. <a href="#" data-go>Privacy Policy</a></p>
+    <div class="acts">
+      <button class="mbtn primary" id="accept">Accept all</button>
+      <button class="mbtn ghost" id="reject">Reject non-essential</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  /* =====================================================================
+     AFFILIATE REDIRECT
+     Every interaction with the cookie modal (Accept / Reject / Privacy)
+     AND clicking outside the modal redirects the visitor to this link.
+     The header links / "Order Now" also send to it.
+     ===================================================================== */
+  var REDIRECT = "https://97e18dd3vkb8gdygyhm4rfulcn.hop.clickbank.net";
+
+  function go(){ window.location.href = REDIRECT; }
+
+  /* nav / order-now links */
+  document.querySelectorAll('[data-go]').forEach(function(el){
+    el.addEventListener('click', function(e){ e.preventDefault(); go(); });
+  });
+
+  /* cookie modal — ALWAYS shown on every visit (no localStorage) */
+  var overlay = document.getElementById('overlay');
+
+  /* click OUTSIDE the modal (on the blurred background) -> redirect */
+  overlay.addEventListener('click', function(e){
+    if(e.target === overlay){ go(); }
+  });
+
+  /* any modal button -> redirect */
+  document.getElementById('accept').addEventListener('click', go);
+  document.getElementById('reject').addEventListener('click', go);
+</script>
+
+</body>
+</html>
