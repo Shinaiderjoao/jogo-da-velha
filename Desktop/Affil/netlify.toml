@@ -1,5 +1,5 @@
 [build]
-  publish = "."
+  publish = "Desktop/Affil"
 
 [[redirects]]
   from = "/*"
