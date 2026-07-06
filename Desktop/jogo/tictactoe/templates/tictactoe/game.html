@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Jogo da Velha Multiplayer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/htmx.org@2.0.2"></script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        body { background: radial-gradient(circle at top, #2d3748, #111827 70%); }
+    </style>
+</head>
+<body class="min-h-screen text-slate-100 flex items-center justify-center px-4 py-10">
+    <div class="w-full max-w-5xl rounded-3xl border border-slate-700/70 bg-slate-900/80 shadow-2xl shadow-black/40 backdrop-blur">
+            <div class="p-6 md:p-10 flex justify-center">
+            <div class="w-full max-w-3xl space-y-6">
+                <div>
+                    <p class="text-sm uppercase tracking-[0.35em] text-cyan-400">Multiplayer</p>
+                    <h1 class="text-4xl md:text-5xl font-black mt-2">Jogo da Velha</h1>
+                    <p class="mt-3 text-slate-300">Crie uma partida, compartilhe o link e jogue com alguém em outro local em tempo real.</p>
+                </div>
+
+                {% if messages %}
+                    <div class="space-y-2">
+                        {% for message in messages %}
+                            <div class="rounded-xl border border-cyan-500/30 bg-cyan-500/10 px-4 py-3 text-sm text-cyan-200">{{ message }}</div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                <div id="game-shell" {% if room %}hx-get="/play/" hx-trigger="load, every 1.5s" hx-swap="innerHTML"{% endif %}>
+                    {% include 'tictactoe/partials/game_shell.html' %}
+                </div>
+                {% comment %} Board is now a separate partial included by `game_shell.html` when needed {% endcomment %}
+            </div>
+        </div>
+    </div>
+
+    {# React panel removed per request - kept scripts for HTMX/Tailwind only #}
+</body>
+</html>
