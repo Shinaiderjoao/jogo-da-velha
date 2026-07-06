@@ -2,7 +2,7 @@
   # Ajuste `command` e `publish` conforme seu fluxo de build front-end.
   # Se você não tem build (só arquivos estáticos), coloque a pasta que contém os arquivos estáticos em `publish`.
   command = "echo 'No frontend build configured — update this if you use a bundler'"
-  publish = "build"
+  publish = "."
 
 # Redireciona chamadas /api/* para seu backend Django hospedado em outro serviço.
 # Substitua YOUR_BACKEND_URL pelo domínio/URL do backend (ex: https://my-backend.up.railway.app).
